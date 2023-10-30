@@ -1,0 +1,26 @@
+工程结构：
+  -main:
+    -com.glanz.ourbatis:
+        -annotations: 注解包(select/update/delete/insert) 用于注解驱动
+        -binding: 映射器相关
+        -builder: 各种builder, 在框架中，一般提供服务是建造者生产工长，工厂提供服务实例
+        -cache: 缓存模块(一级缓存，二级缓存)
+        -datasource: 数据源设置(druid, 有/无池化设计)
+        -executor: Sql执行器
+        -io: 读取资源->资源的定义resources目录下的***mapper.xml文件
+        -logging: 日志, 简单实现了日志
+        -mapping: Map 映射器相关
+        -parsing: 解析器， 处理 ${},#{}
+        -plugin: 对外提供插件接口 (只实现了拦截器)
+        -reflection: 反射工具类(一般来说，后端框架都会实现一个反射工具包，用于基础应用)
+        -scripting: 语言处理脚本模块
+        -session: 服务模块 (具体服务)
+        -transaction: 事务模块 (提供了回滚，提交等功能)
+        -type: 类型处理模块, 映射java类型与sql数据类型
+  -test:
+    -java:框架
+        -com.glanz.ourbatis:
+            -dao: 数据库连接层
+            -po: 实体类
+    -resources:
+        mapper: 测试mapper.xml
